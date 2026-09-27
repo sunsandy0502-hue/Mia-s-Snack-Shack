@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Cartoon Snack Menu</title>
+<style>
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at 15% 20%, #fff3a8 0 60px, transparent 61px),
+    radial-gradient(circle at 85% 10%, #ffd3e2 0 75px, transparent 76px),
+    linear-gradient(135deg,#fff9ef,#eefaff);
+  color:#2b2b2b;
+}
+.page { max-width:1200px; margin:auto; padding:32px 24px 52px; }
+.header {
+  text-align:center;
+  margin-bottom:28px;
+  background:white;
+  border:4px solid #222;
+  border-radius:28px;
+  padding:24px 18px;
+  box-shadow:8px 8px 0 #ffd84d;
+}
+.header h1 {
+  margin:0;
+  font-size:clamp(34px,6vw,58px);
+  color:#ff5a5f;
+  letter-spacing:1px;
+}
+.header p {
+  margin:10px 0 0;
+  font-size:18px;
+  font-weight:700;
+  color:#5a4a42;
+}
+.seller {
+  display:inline-block;
+  margin-top:14px;
+  padding:9px 16px;
+  background:#dff7ff;
+  border:3px solid #222;
+  border-radius:999px;
+  font-size:18px;
+  font-weight:800;
+  box-shadow:3px 3px 0 rgba(0,0,0,.12);
+}
+.photo-note {
+  margin-top:12px;
+  font-size:15px;
+  font-weight:800;
+  color:#6a4a00;
+}
+.section-title {
+  margin:38px 0 18px;
+  text-align:center;
+  font-size:32px;
+  color:#3d78b5;
+  text-shadow:2px 2px 0 #fff;
+}
+.menu-grid {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:20px;
+}
+.menu-card {
+  position:relative;
+  background:#fff;
+  border:3px solid #222;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:6px 6px 0 rgba(0,0,0,.15);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.menu-card:hover {
+  transform:translateY(-7px) rotate(-1deg);
+  box-shadow:9px 11px 0 rgba(0,0,0,.18);
+}
+.menu-card:nth-child(even):hover { transform:translateY(-7px) rotate(1deg); }
+.menu-card img {
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  display:block;
+  background:#fff;
+}
+.emoji-badge {
+  position:absolute;
+  top:10px;
+  right:10px;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:#fff;
+  border:3px solid #222;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  z-index:2;
+  box-shadow:3px 3px 0 rgba(0,0,0,.15);
+}
+.menu-info { padding:16px; text-align:center; }
+.menu-name { margin:0 0 8px; font-size:18px; font-weight:900; }
+.menu-price {
+  display:inline-block;
+  margin:0;
+  padding:7px 14px;
+  border-radius:999px;
+  background:#dff7d8;
+  border:2px solid #222;
+  font-size:20px;
+  font-weight:900;
+  color:#24703d;
+}
+.stock {
+  margin:10px 0 0;
+  font-size:15px;
+  font-weight:800;
+  color:#6b4f2b;
+}
+.pickup-banner {
+  margin-top:34px;
+  background:linear-gradient(90deg,#ffe45c,#ffb347,#ff7eb3);
+  border:4px solid #222;
+  border-radius:24px;
+  padding:22px 24px;
+  text-align:center;
+  font-size:clamp(19px,3vw,28px);
+  font-weight:900;
+  color:#222;
+  box-shadow:7px 7px 0 rgba(0,0,0,.16);
+}
+.pickup-banner span {
+  display:block;
+  font-size:.72em;
+  margin-top:6px;
+}
+@media (max-width:850px) {
+  .menu-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:520px) {
+  .page { padding:20px 12px 34px; }
+  .menu-grid { gap:12px; }
+  .menu-info { padding:12px; }
+  .menu-name { font-size:15px; }
+  .menu-price { font-size:17px; }
+  .emoji-badge { width:40px; height:40px; font-size:21px; }
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="header">
+    <h1>🍿 Snack Attack! 🍪</h1>
+    <p>Pick your favorite treat before it’s gone!</p>
+    <div class="seller">👩‍🍳 Seller: <strong>Mia</strong></div>
+    <div class="photo-note">🎨 Cartoon pictures that always load correctly!</div>
+  </header>
+
+  <h2 class="section-title">🍪 Snacks</h2>
+  <section class="menu-grid">
+    
+        <article class="menu-card">
+          <div class="emoji-badge">🥔</div>
+          <img src="data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22600%22%20height%3D%22450%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23FFF3A6%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M180%2070h240l30%20310H150z%22%20fill%3D%22%23FFD84D%22%20stroke%3D%22%23F2A900%22%20stroke-width%3D%228%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22300%22%20cy%3D%22215%22%20r%3D%2282%22%20fill%3D%22%23FFF5B8%22/%3E%0A%20%20%20%20%20%20%3Cellipse%20cx%3D%22270%22%20cy%3D%22205%22%20rx%3D%2245%22%20ry%3D%2230%22%20fill%3D%22%23F0C56A%22/%3E%0A%20%20%20%20%20%20%3Cellipse%20cx%3D%22330%22%20cy%3D%22230%22%20rx%3D%2250%22%20ry%3D%2232%22%20fill%3D%22%23E9B951%22/%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22300%22%20y%3D%22345%22%20text-anchor%3D%22middle%22%20font-size%3D%2244%22%20font-family%3D%22Arial%22%20font-weight%3D%22700%22%20fill%3D%22%237A5200%22%3ECHIPS%3C/text%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20" alt="Potato Chips">
+          <div class="menu-info">
+            <h2 class="menu-name">Potato Chips</h2>
+            <p class="menu-price">$1.50</p>
+            <p class="stock">📦 8 snacks left</p>
+          </div>
+        </article>
+        
+
+        <article class="menu-card">
+          <div class="emoji-badge">🍫</div>
+          <img src="data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22600%22%20height%3D%22450%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23F7E2D2%22/%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22170%22%20y%3D%2295%22%20width%3D%22260%22%20height%3D%22250%22%20rx%3D%2222%22%20fill%3D%22%236F3B22%22/%3E%0A%20%20%20%20%20%20%3Cg%20fill%3D%22%238E5130%22%20stroke%3D%22%235B2D18%22%20stroke-width%3D%225%22%3E%0A%20%20%20%20%20%20%20%20%3Crect%20x%3D%22195%22%20y%3D%22120%22%20width%3D%2295%22%20height%3D%2290%22%20rx%3D%2210%22/%3E%0A%20%20%20%20%20%20%20%20%3Crect%20x%3D%22310%22%20y%3D%22120%22%20width%3D%2295%22%20height%3D%2290%22%20rx%3D%2210%22/%3E%0A%20%20%20%20%20%20%20%20%3Crect%20x%3D%22195%22%20y%3D%22230%22%20width%3D%2295%22%20height%3D%2290%22%20rx%3D%2210%22/%3E%0A%20%20%20%20%20%20%20%20%3Crect%20x%3D%22310%22%20y%3D%22230%22%20width%3D%2295%22%20height%3D%2290%22%20rx%3D%2210%22/%3E%0A%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20" alt="Chocolate Bar">
+          <div class="menu-info">
+            <h2 class="menu-name">Chocolate Bar</h2>
+            <p class="menu-price">$1.75</p>
+            <p class="stock">📦 6 snacks left</p>
+          </div>
+        </article>
+        
+
+        <article class="menu-card">
+          <div class="emoji-badge">🍿</div>
+          <img src="data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22600%22%20height%3D%22450%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23DFF4FF%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M205%20165h190l-24%20200H229z%22%20fill%3D%22%23FFFFFF%22%20stroke%3D%22%23E94545%22%20stroke-width%3D%228%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M235%20165v200M295%20165v200M355%20165v200%22%20stroke%3D%22%23E94545%22%20stroke-width%3D%2228%22/%3E%0A%20%20%20%20%20%20%3Cg%20fill%3D%22%23FFF7CF%22%20stroke%3D%22%23E1C56B%22%20stroke-width%3D%224%22%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%22240%22%20cy%3D%22145%22%20r%3D%2242%22/%3E%3Ccircle%20cx%3D%22300%22%20cy%3D%22125%22%20r%3D%2245%22/%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%22360%22%20cy%3D%22145%22%20r%3D%2242%22/%3E%3Ccircle%20cx%3D%22270%22%20cy%3D%22170%22%20r%3D%2240%22/%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%22330%22%20cy%3D%22170%22%20r%3D%2240%22/%3E%0A%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20" alt="Popcorn">
+          <div class="menu-info">
+            <h2 class="menu-name">Popcorn</h2>
+            <p class="menu-price">$2.00</p>
+            <p class="stock">📦 10 snacks left</p>
+          </div>
+        </article>
+        
+
+        <article class="menu-card">
+          <div class="emoji-badge">🍪</div>
+          <img src="data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22600%22%20height%3D%22450%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23FFE8CC%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22300%22%20cy%3D%22225%22%20r%3D%22130%22%20fill%3D%22%23D89A52%22%20stroke%3D%22%23B06E2F%22%20stroke-width%3D%228%22/%3E%0A%20%20%20%20%20%20%3Cg%20fill%3D%22%235B3322%22%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%22250%22%20cy%3D%22170%22%20r%3D%2214%22/%3E%3Ccircle%20cx%3D%22340%22%20cy%3D%22165%22%20r%3D%2213%22/%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%22210%22%20cy%3D%22240%22%20r%3D%2212%22/%3E%3Ccircle%20cx%3D%22310%22%20cy%3D%22245%22%20r%3D%2215%22/%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%22380%22%20cy%3D%22250%22%20r%3D%2212%22/%3E%3Ccircle%20cx%3D%22270%22%20cy%3D%22300%22%20r%3D%2213%22/%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%22350%22%20cy%3D%22310%22%20r%3D%2212%22/%3E%0A%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20" alt="Chocolate Chip Cookie">
+          <div class="menu-info">
+            <h2 class="menu-name">Chocolate Chip Cookie</h2>
+            <p class="menu-price">$1.25</p>
+            <p class="stock">📦 5 snacks left</p>
+          </div>
+        </article>
+        
+
+        <article class="menu-card">
+          <div class="emoji-badge">🟫</div>
+          <img src="data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22600%22%20height%3D%22450%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23F7E3D5%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M180%20150l240-35%2035%20210-240%2035z%22%20fill%3D%22%235F321F%22%20stroke%3D%22%233D1F14%22%20stroke-width%3D%228%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M205%20168l195-29%2010%2055-195%2029z%22%20fill%3D%22%237C462D%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22260%22%20cy%3D%22250%22%20r%3D%2212%22%20fill%3D%22%239A5E3D%22/%3E%3Ccircle%20cx%3D%22330%22%20cy%3D%22230%22%20r%3D%2212%22%20fill%3D%22%239A5E3D%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22370%22%20cy%3D%22285%22%20r%3D%2212%22%20fill%3D%22%239A5E3D%22/%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20" alt="Brownie">
+          <div class="menu-info">
+            <h2 class="menu-name">Brownie</h2>
+            <p class="menu-price">$2.25</p>
+            <p class="stock">📦 4 snacks left</p>
+          </div>
+        </article>
+        
+
+        <article class="menu-card">
+          <div class="emoji-badge">🥨</div>
+          <img src="data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22600%22%20height%3D%22450%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23FFF0D1%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M300%20130%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20C210%2040%2C120%20155%2C190%20235%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20C240%20290%2C300%20245%2C300%20210%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20C300%20245%2C360%20290%2C410%20235%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20C480%20155%2C390%2040%2C300%20130%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20M220%20255%20C260%20315%2C340%20315%2C380%20255%22%0A%20%20%20%20%20%20%20%20%20%20%20%20fill%3D%22none%22%20stroke%3D%22%23A76128%22%20stroke-width%3D%2236%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%20%20%3Cg%20fill%3D%22%23fff%22%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%22235%22%20cy%3D%22135%22%20r%3D%226%22/%3E%3Ccircle%20cx%3D%22300%22%20cy%3D%22100%22%20r%3D%226%22/%3E%3Ccircle%20cx%3D%22365%22%20cy%3D%22140%22%20r%3D%226%22/%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%22250%22%20cy%3D%22280%22%20r%3D%226%22/%3E%3Ccircle%20cx%3D%22345%22%20cy%3D%22275%22%20r%3D%226%22/%3E%0A%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20" alt="Pretzel">
+          <div class="menu-info">
+            <h2 class="menu-name">Pretzel</h2>
+            <p class="menu-price">$2.00</p>
+            <p class="stock">📦 7 snacks left</p>
+          </div>
+        </article>
+        
+
+        <article class="menu-card">
+          <div class="emoji-badge">🧁</div>
+          <img src="data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22600%22%20height%3D%22450%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23FFE0EC%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M220%20220h160l-25%20135H245z%22%20fill%3D%22%23C87D4C%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M210%20220c0-50%2040-85%2090-75%2035-45%20100-10%2095%2040%2025%2010%2030%2045%2010%2060H210z%22%20fill%3D%22%23F7A6C3%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22300%22%20cy%3D%22125%22%20r%3D%2220%22%20fill%3D%22%23E43754%22/%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20" alt="Cupcake">
+          <div class="menu-info">
+            <h2 class="menu-name">Cupcake</h2>
+            <p class="menu-price">$2.50</p>
+            <p class="stock">📦 3 snacks left</p>
+          </div>
+        </article>
+        
+
+        <article class="menu-card">
+          <div class="emoji-badge">🧁</div>
+          <img src="data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22600%22%20height%3D%22450%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23EAF8DE%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M225%20220h150l-18%20130H243z%22%20fill%3D%22%23C8884D%22/%3E%0A%20%20%20%20%20%20%3Cellipse%20cx%3D%22300%22%20cy%3D%22205%22%20rx%3D%22105%22%20ry%3D%2278%22%20fill%3D%22%23D9A36A%22%20stroke%3D%22%23B87B42%22%20stroke-width%3D%228%22/%3E%0A%20%20%20%20%20%20%3Cg%20fill%3D%22%237A4C2F%22%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%22255%22%20cy%3D%22185%22%20r%3D%2210%22/%3E%3Ccircle%20cx%3D%22325%22%20cy%3D%22170%22%20r%3D%2210%22/%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%22355%22%20cy%3D%22215%22%20r%3D%229%22/%3E%3Ccircle%20cx%3D%22280%22%20cy%3D%22235%22%20r%3D%229%22/%3E%0A%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20" alt="Mini Muffin">
+          <div class="menu-info">
+            <h2 class="menu-name">Mini Muffin</h2>
+            <p class="menu-price">$1.50</p>
+            <p class="stock">📦 9 snacks left</p>
+          </div>
+        </article>
+        
+  </section>
+
+  <h2 class="section-title">🥤 Drinks</h2>
+  <section class="menu-grid">
+    
+        <article class="menu-card">
+          <div class="emoji-badge">💧</div>
+          <img src="data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22600%22%20height%3D%22450%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23E8F7FF%22/%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22255%22%20y%3D%2270%22%20width%3D%2290%22%20height%3D%22300%22%20rx%3D%2228%22%20fill%3D%22%23B9E7FF%22%20stroke%3D%22%234AA7D8%22%20stroke-width%3D%228%22/%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22270%22%20y%3D%2240%22%20width%3D%2260%22%20height%3D%2255%22%20rx%3D%2212%22%20fill%3D%22%234AA7D8%22/%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22265%22%20y%3D%22180%22%20width%3D%2270%22%20height%3D%2280%22%20rx%3D%228%22%20fill%3D%22%23FFFFFF%22%20opacity%3D%22.9%22/%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%22300%22%20y%3D%22230%22%20text-anchor%3D%22middle%22%20font-size%3D%2228%22%20font-family%3D%22Arial%22%20font-weight%3D%22700%22%20fill%3D%22%232587B8%22%3EWATER%3C/text%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20" alt="Bottled Water">
+          <div class="menu-info">
+            <h2 class="menu-name">Bottled Water</h2>
+            <p class="menu-price">$1.00</p>
+            <p class="stock">📦 12 drinks left</p>
+          </div>
+        </article>
+        
+
+        <article class="menu-card">
+          <div class="emoji-badge">🍋</div>
+          <img src="data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22600%22%20height%3D%22450%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23FFF9C9%22/%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22205%22%20y%3D%2290%22%20width%3D%22190%22%20height%3D%22280%22%20rx%3D%2220%22%20fill%3D%22%23FFF27A%22%20stroke%3D%22%23E0BF26%22%20stroke-width%3D%228%22/%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22350%22%20y1%3D%2260%22%20x2%3D%22330%22%20y2%3D%22150%22%20stroke%3D%22%23FF7E67%22%20stroke-width%3D%2212%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22300%22%20cy%3D%22215%22%20r%3D%2255%22%20fill%3D%22%23FFFAB5%22%20stroke%3D%22%23E2CA36%22%20stroke-width%3D%227%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M300%20160v110M245%20215h110%22%20stroke%3D%22%23E2CA36%22%20stroke-width%3D%225%22/%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20" alt="Lemonade">
+          <div class="menu-info">
+            <h2 class="menu-name">Lemonade</h2>
+            <p class="menu-price">$1.50</p>
+            <p class="stock">📦 8 drinks left</p>
+          </div>
+        </article>
+        
+
+        <article class="menu-card">
+          <div class="emoji-badge">🍊</div>
+          <img src="data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22600%22%20height%3D%22450%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23FFF0D6%22/%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22205%22%20y%3D%2295%22%20width%3D%22190%22%20height%3D%22275%22%20rx%3D%2218%22%20fill%3D%22%23FFA83D%22%20stroke%3D%22%23D97800%22%20stroke-width%3D%228%22/%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22300%22%20cy%3D%22220%22%20r%3D%2262%22%20fill%3D%22%23FFD18A%22%20stroke%3D%22%23F28A00%22%20stroke-width%3D%227%22/%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M300%20158v124M238%20220h124%22%20stroke%3D%22%23F28A00%22%20stroke-width%3D%225%22/%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20" alt="Orange Juice">
+          <div class="menu-info">
+            <h2 class="menu-name">Orange Juice</h2>
+            <p class="menu-price">$1.75</p>
+            <p class="stock">📦 6 drinks left</p>
+          </div>
+        </article>
+        
+
+        <article class="menu-card">
+          <div class="emoji-badge">🧋</div>
+          <img src="data:image/svg+xml;charset=UTF-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22600%22%20height%3D%22450%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23F5E8D6%22/%3E%0A%20%20%20%20%20%20%3Crect%20x%3D%22210%22%20y%3D%2295%22%20width%3D%22180%22%20height%3D%22275%22%20rx%3D%2218%22%20fill%3D%22%23B56A2C%22%20stroke%3D%22%237C451D%22%20stroke-width%3D%228%22/%3E%0A%20%20%20%20%20%20%3Cg%20fill%3D%22%23E7F6FF%22%20opacity%3D%22.85%22%3E%0A%20%20%20%20%20%20%20%20%3Crect%20x%3D%22240%22%20y%3D%22135%22%20width%3D%2245%22%20height%3D%2245%22%20rx%3D%227%22/%3E%0A%20%20%20%20%20%20%20%20%3Crect%20x%3D%22315%22%20y%3D%22155%22%20width%3D%2245%22%20height%3D%2245%22%20rx%3D%227%22/%3E%0A%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%20%20%3Cline%20x1%3D%22350%22%20y1%3D%2255%22%20x2%3D%22335%22%20y2%3D%22140%22%20stroke%3D%22%2377B255%22%20stroke-width%3D%2212%22/%3E%0A%20%20%20%20%3C/svg%3E%0A%20%20%20%20" alt="Iced Tea">
+          <div class="menu-info">
+            <h2 class="menu-name">Iced Tea</h2>
+            <p class="menu-price">$1.50</p>
+            <p class="stock">📦 7 drinks left</p>
+          </div>
+        </article>
+        
+  </section>
+
+  <div class="pickup-banner">
+    📍 Pick up at Room 214
+    <span>⏰ 12:15–12:45 PM</span>
+  </div>
+</main>
+</body>
+</html>
